@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Konverter Desimal ke Biner</title>
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            margin-top: 50px;
+        }
+        input, button {
+            padding: 10px;
+            font-size: 16px;
+        }
+        #result {
+            margin-top: 20px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Konverter Desimal ke Biner</h1>
+
+    <input type="number" id="decimalInput" placeholder="Masukkan angka desimal">
+    <br><br>
+    <button onclick="convert()">Konversi</button>
+
+    <div id="result"></div>
+
+    <script>
+        function convert() {
+            const input = document.getElementById("decimalInput").value;
+            const decimal = parseInt(input);
+
+            if (isNaN(decimal)) {
+                document.getElementById("result").innerText = "Masukkan angka yang valid!";
+                return;
+            }
+
+            const binary = decimal.toString(2);
+            document.getElementById("result").innerText = "Hasil biner: " + binary;
+        }
+    </script>
+
+</body>
+</html>
